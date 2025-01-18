@@ -1,9 +1,9 @@
 # ![Image](https://github.com/user-attachments/assets/0df1de45-a033-4cf6-aa13-157749ef4552)
 
-# Motivation
+## Motivation
 This application allows you to schedule publications (linkedin, mastodon, ...) to multiple systems from your second brain (Notion, ...)
 
-# Development 
+## Development 
 
 1. You require nodejs on your computer.
 
