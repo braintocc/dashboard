@@ -74,7 +74,6 @@ function Mappings() {
           userLocal = await getUser(user.email)
         }
         setServerUser(userLocal)
-        
         setMappings(userLocal.mappings || [])
         setDestinations(Object.entries(userLocal.destinations).map(([id,value] : any) =>({...value, id})))
         setSources(await Promise.all(Object.entries(userLocal.sources).map(async([id,value] : any) =>{
@@ -97,16 +96,16 @@ const columns: GridColDef[] = [
         const localTable = localSource.tables.find((tb: any) => tb.id === value.tableId)
         if (!localTable)
           return ""
-        else return <Chip key={index} label={`${localSource.name} ${localTable.title}`} />
+        else return <Chip key={index} label={`notion: ${localSource.name} - ${localTable.title}`} />
       })}
     </>
   }},
   { field: 'destinations', headerName: 'Destinations', flex: 2, 
   renderCell: (params: any) => (
     <>
-      {params.value && params.value.map((destination: any, index: number) => (
-        <Chip key={index} label={`${destination.id}`} />
-      ))}
+      {params.value && params.value.map((destination: any, index: number) => {
+       return <Chip key={index} label={`${serverUser.destinations[destination.id].site}: ${destination.id}`} />
+      })}
     </>
   ) },
   {

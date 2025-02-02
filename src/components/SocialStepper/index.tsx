@@ -52,7 +52,7 @@ function FormDestinationsSelector({destinations, handleSelect}: any){
       onChange={handleChange}
     >
     {destinations.map((destination: any) => (<MenuItem value={destination.id}>
-      {destination.name}
+      {destination.site}: {destination.name}
       </MenuItem>))}
     </Select>
   </FormControl>)
@@ -62,7 +62,6 @@ export const steps = ['Select Source Account', 'Select Source Table', 'Select De
 export const stepForms = [FormSourceAccountSelector, FormSourceTableSelector, FormDestinationsSelector]
 
 export function SocialStepper({ sources, destinations, handleFinish }: any) {
-
   const [activeStep, setActiveStep] = React.useState(0);
   const [result, setResult] = React.useState({} as any);
   const [nextDisabled, setNextDisabled] = React.useState(true)
