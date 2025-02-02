@@ -64,6 +64,7 @@ function Connections() {
 
   const connectionDestinationTypes: any[] = [
     {value:"linkedin" , text: "LinkedIn", action: () => window.location.replace(`${ServerUrl}/connect/linkedin${passParams}`), control: () => <></>},
+    {value:"youtube" , text: "Youtube", action: () => window.location.replace(`${ServerUrl}/connect/google${passParams}`), control: () => <></>},
     {value:"mastodon" , text: "Mastodon", action: () => window.location.replace(`${ServerUrl}/connect/mastodon${passParams}`), control: () => <></>},
     {value:"substack" , text: "Substack", action: () => handleOpen(), fromDestination: `${ServerUrl}/auth/substack/callback`, control: () => <TextField variant="standard"  type="text" name="cookie" placeholder="Substack Cookie" />},
     {value:"bluesky" , text: "Bluesky", action: () => handleOpen(), fromDestination: `${ServerUrl}/auth/bluesky/callback`, control: () => <><TextField variant="standard"  type="text" name="identifier" placeholder="Bluesky Identifier" />
