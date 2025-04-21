@@ -69,6 +69,8 @@ function Connections() {
     {value:"substack" , text: "Substack", action: () => handleOpen(), fromDestination: `${ServerUrl}/auth/substack/callback`, control: () => <TextField variant="standard"  type="text" name="cookie" placeholder="Substack Cookie" />},
     {value:"bluesky" , text: "Bluesky", action: () => handleOpen(), fromDestination: `${ServerUrl}/auth/bluesky/callback`, control: () => <><TextField variant="standard"  type="text" name="identifier" placeholder="Bluesky Identifier" />
     <TextField variant="standard"  type="text" name="password" placeholder="Bluesky App Password" /></>},
+    {value:"instagram" , text: "Instagram", action: () => handleOpen(), fromDestination: `${ServerUrl}/auth/instagram/callback`, control: () => <><TextField variant="standard"  type="text" name="username" placeholder="Instagram Username" />
+    <TextField variant="standard"  type="password" name="password" placeholder="Instagram Password" /></>},
   ];
 
   useEffect(() => {
